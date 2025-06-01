@@ -19,10 +19,10 @@ const port = process.env.PORT || 3000;
 connectDB();
 server.use(cors());
 server.use(express.json());
-server.use(express.static(path.join(__dirname, 'public')));
-server.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'userDashboard.html'));
-    });
+// server.use(express.static(path.join(__dirname, 'public')));
+// server.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'userDashboard.html'));
+//     });
 
 server.use("/user", userRoute);
 server.use("/auth", authRoute);
