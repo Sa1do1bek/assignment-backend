@@ -1,7 +1,7 @@
 const UserModel = require("../models/model").UserModel;
 const { v4: uuidv4 } = require('uuid');
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 exports.register = async (name, email, password, isBusiness, address, businessName) => {
     const hashedPassword = await bcrypt.hash(password, 10);
